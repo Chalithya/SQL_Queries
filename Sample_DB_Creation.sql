@@ -43,11 +43,31 @@ CREATE TABLE Take(
 	);
 
 CREATE TABLE Teach(
-	Fnmae	varchar(20)		NOT NULL,
+	Fname	varchar(20)		NOT NULL,
 	Lname	varchar(20)		NULL,
 	Cno		char(9)			NOT NULL	
 	);
 
+--DROP TABLE Teach;
 
-SELECT Sno FROM Take WHERE (Cno = 'CS112');
 
+INSERT INTO Professor ([Fname],[Lname],[Dept],[Rank],[Salary],[Age])
+VALUES ('bhagya', 'sithara', 'computing', 'head', 30000, 24 );
+
+
+INSERT INTO Course([Cno],[Title],[Credits])
+VALUES ('CS034', 'Electrical', 1);
+
+
+INSERT INTO Student([Sno],[Sname],[Age])
+VALUES ('std03', 'kimuthu', 20);
+
+
+INSERT INTO Take ([Sno],[Cno],[Grade])
+VALUES ('std03', 'CS003', 'c');
+
+INSERT INTO Teach ([Fname],[Lname],[Cno])
+VALUES ('parami', 'hansika', 'CS003');
+
+
+SELECT Sno FROM Take WHERE (Cno = 'CS001');
