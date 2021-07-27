@@ -49,5 +49,5 @@ CREATE TABLE Teach(
 	);
 
 
-
+SELECT Sno FROM Take WHERE (Cno = 'CS112');
 
