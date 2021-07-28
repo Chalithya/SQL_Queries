@@ -69,5 +69,3 @@ VALUES ('std03', 'CS003', 'c');
 INSERT INTO Teach ([Fname],[Lname],[Cno])
 VALUES ('parami', 'hansika', 'CS003');
 
-
-SELECT Sno FROM Take WHERE (Cno = 'CS001');
