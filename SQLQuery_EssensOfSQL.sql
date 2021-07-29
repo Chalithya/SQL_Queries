@@ -45,3 +45,40 @@ FROM	Take X, Take Y
 WHERE	(X.Sno = Y.Sno)
 	AND	(X.Cno = 'CS001')
 	AND	(Y.Cno = 'CS002')
+
+
+SELECT DISTINCT	Sno
+FROM			Take
+WHERE			(Cno !='CS001')
+
+/* Wrong
+SELECT DISTINCT S.Sno
+FROM			Student S, Take T		
+WHERE			(S.Sno = T.Sno)
+	AND		NOT	(T.Sno = 'CS001')
+*/
+----------------------------------------------------------------
+--8th Chapter
+
+SELECT DISTINCT	T.Sno
+FROM			Take T, Take
+WHERE			(T.Sno = Take.Sno)
+	AND			(T.Cno != Take.Cno)
+
+SELECT DISTINCT	X.Sno
+FROM			Take X, Take Y, Take
+WHERE			(X.Sno = Take.Sno)
+	AND			(X.Sno = Y.Sno)
+	AND			(X.Cno != Take.Cno)
+	AND			(X.Cno != Y.Cno)
+	AND			(Y.Cno != Take.Cno)
+
+
+SELECT DISTINCT	X.Sno
+FROM			Take X, Take Y, Take
+WHERE			(X.Sno = Take.Sno)
+	AND			(X.Sno = Y.Sno)
+	AND			(X.Cno < Y.Cno)
+	AND			(Y.Cno < Take.Cno)
+
+
